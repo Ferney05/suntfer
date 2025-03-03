@@ -1,29 +1,30 @@
+const link_project = document.querySelectorAll('.link_project')
 
-const psyco = document.getElementById('psyco')
-const enrollnow = document.getElementById('enrollnow')
-const vendex = document.getElementById('vendex')
-
-const alert_psyco = document.getElementById('alert-psicorientation')
-const alert_enrollnow = document.getElementById('alert-enrollnow')
-const alert_vendex = document.getElementById('alert-vendex')
-
-
-function CreateModal(text_alert){
-    text_alert.innerText = 'El diseño está en proceso'
-
-    setTimeout(() => {
-        text_alert.style = 'display: none'
-    }, 5000)
+function CreateModal() {
+    Swal.fire({
+        title: 'En proceso',
+        text: 'El diseño aún está en proceso',
+        icon: 'info',
+        confirmButtonColor: '#009ed0',
+        background: '#161922',
+        color: '#fff',
+        timer: 5000,
+        timerProgressBar: true,
+        showConfirmButton: false,
+        customClass: {
+            popup: 'custom-alert',
+            title: 'custom-title',
+            content: 'custom-content',
+            timerProgressBar: 'custom-progress'
+        }
+    });
 }
 
-vendex.addEventListener('click', () => { CreateModal(alert_vendex) })
-psyco.addEventListener('click', () => { CreateModal(alert_psyco) })
-enrollnow.addEventListener('click', () => { CreateModal(alert_enrollnow) })
-
-
+link_project.forEach(link => {
+    link.addEventListener('click', () => { CreateModal() })
+})
 
 // MODAL
-
 document.addEventListener('DOMContentLoaded', () => {
     const show_modal_vendex = document.getElementById('show-modal-vendex')
     const modal_vendex = document.getElementById('modal-vendex')
@@ -35,4 +36,21 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         modal_vendex.style = 'display: none'
     }, 30000)
+
+    // Alert para los content_name_slogan
+    const projectContents = document.querySelectorAll('.content_name_slogan')
+    projectContents.forEach(content => {
+        content.addEventListener('click', () => {
+            CreateModal()
+        })
+    })
+
+    // Alert para los events-none
+    const eventsNoneButtons = document.querySelectorAll('.events-none')
+    eventsNoneButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault()
+            CreateModal()
+        })
+    })
 })

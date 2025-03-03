@@ -1,7 +1,18 @@
 
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;800;900&family=Sigmar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap');
+
+@import url('base-btn-bd.css');
+
 :root {
+    --font-montserrat: 'Montserrat', sans-serif;
+    --font-playwrite: "Playwrite DE Grund";
+    --font-quicksand: "Quicksand";
+    --font-livvic: "Livvic";
     --color-nav: #161922;
     --color-body: #121318;
 
@@ -13,7 +24,6 @@
     --color-gris: #dddddd;
     --color-red-claro: #c75959;
 
-    --font-quicksand: "Quicksand";
     --color-rosy-red: #9c282e;
 
     --color-light-gray: #a2a3a5;
@@ -28,7 +38,7 @@
 }
 
 * {
-    font-family: var(--font-quicksand);
+    font-family: var(--font-montserrat);
     margin: 0;
     padding: 0;
     user-select: none;
