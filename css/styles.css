@@ -16,7 +16,7 @@ body {
     margin: auto;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 100px 450px 400px 1050px 800px 800px 1200px 600px;
+    grid-template-rows: 100px 450px 400px 1050px 800px 800px 800px 800px 200px;
 }
 
 /* Nav */
@@ -34,6 +34,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 2rem;
 }
 
 .icon-name {
@@ -56,6 +57,76 @@ body {
 
 .red-social a:first-child {
     margin-top: .18rem;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.like-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    color: #fff;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.like-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.like-button svg {
+    width: 18px;
+    height: 18px;
+    fill: #ff5f6d;
+}
+
+.like-button span {
+    color: #ff5f6d;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .c-nav {
+        padding: 0 1rem;
+    }
+
+    .nav-right {
+        gap: 1rem;
+    }
+
+    .like-button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .c-nav {
+        padding: 0 0.5rem;
+    }
+
+    .nav-right {
+        gap: 0.8rem;
+    }
+
+    .like-button {
+        padding: 0.3rem 0.6rem;
+    }
+
+    .like-button svg {
+        width: 16px;
+        height: 16px;
+    }
 }
 
 
@@ -655,7 +726,10 @@ body {
     grid-column: 1 / 2;
     grid-row: 8 / 9;
     padding: 3rem;
-    margin-top: 2rem;
+    /* margin-top: 25rem; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .contact-home h2 {
@@ -875,7 +949,7 @@ body {
 @media (max-width: 768px) {
     .main-home {
         width: 95%;
-        grid-template-rows: auto auto auto auto auto auto auto auto;
+        grid-template-rows: 50px auto auto auto auto auto auto auto;
         padding-top: 1rem;
     }
 
@@ -1298,6 +1372,14 @@ body {
     background: rgba(31, 31, 36, 0.5);
     border-radius: 15px;
     margin: 15rem 2rem 2rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.skills-content {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .skills-content h2 {
@@ -1320,8 +1402,17 @@ body {
     border-radius: 2px;
 }
 
+.skills-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
 .skills-category {
-    margin-bottom: 3rem;
+    flex: 0 0 100%;
+    min-width: 100%;
+    margin-left: -1rem;
 }
 
 .skills-category h3 {
@@ -1333,8 +1424,8 @@ body {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
 }
 
 .skill-item {
@@ -1380,44 +1471,225 @@ body {
     transition: width 1s ease-in-out;
 }
 
-@media (max-width: 768px) {
-    .skills-section {
-        padding: 2rem 1rem;
-        margin: 2rem 1rem;
-    }
-
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .skills-content h2 {
-        font-size: 1.8rem;
-    }
-
-    .skills-category h3 {
-        font-size: 1.3rem;
-    }
+.slider-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
 }
 
-@media (max-width: 600px) {
-    .main-home {
-        width: 90%;
-        grid-template-rows: auto;
-        margin: 0 auto;
-        padding: 1rem;
-    }
+.slider-button {
+    background: rgba(2, 214, 228, 0.1);
+    border: 1px solid rgba(2, 214, 228, 0.2);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
 
+.slider-button:hover {
+    background: rgba(2, 214, 228, 0.2);
+    transform: scale(1.1);
+}
+
+.slider-button svg {
+    width: 24px;
+    height: 24px;
+    fill: #02d6e4;
+}
+
+@media (max-width: 768px) {
     .skills-section {
-        margin: 15rem 1rem 1rem 1rem;
-    }
-
-    .contact-home {
-        margin-top: 2rem;
-        padding: 1.5rem;
+        display: none;
     }
 
     .title-services {
         font-size: 1.8rem;
+    }
+}
+
+/* Footer */
+.footer {
+    grid-column: 1 / 2;
+    grid-row: 9 / 10;
+    padding: 3rem 2rem;
+    margin: 2rem 2rem 4rem 2rem;
+    backdrop-filter: blur(10px);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 0 2rem 0;
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.footer-nav .icon-name {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-nav .icon-name img {
+    width: 40px;
+    height: 40px;
+}
+
+.footer-nav .icon-name h2 {
+    font-size: 1.8rem;
+    color: #02d6e4;
+    font-weight: 600;
+}
+
+.footer-nav .red-social {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-nav .red-social a {
+    transition: transform 0.3s ease;
+}
+
+.footer-nav .red-social a:hover {
+    transform: translateY(-3px);
+}
+
+.footer-interaction {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.footer-interaction h3 {
+    font-size: 1.5rem;
+    color: #02d6e4;
+    margin-bottom: 0.5rem;
+}
+
+.footer-interaction p {
+    color: #8f8f92;
+    line-height: 1.6;
+}
+
+.subscribe-form {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.subscribe-form input {
+    flex: 1;
+    padding: 0.8rem 1.2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.subscribe-form input::placeholder {
+    color: #8f8f92;
+}
+
+.subscribe-form button {
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(45deg, #02d6e4, #00b4d8);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.subscribe-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(2, 214, 228, 0.3);
+}
+
+.like-section {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.like-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.like-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.like-button svg {
+    width: 20px;
+    height: 20px;
+    fill: #ff5f6d;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 2rem 1.5rem;
+        margin: 2rem 1rem 3rem 1rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .subscribe-form {
+        flex-direction: column;
+    }
+
+    .subscribe-form button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer {
+        padding: 1.5rem 1rem;
+        margin: 2rem 1rem 2rem 1rem;
+    }
+
+    .footer-content {
+        gap: 1.5rem;
+    }
+
+    .footer-nav .icon-name h2 {
+        font-size: 1.5rem;
+    }
+
+    .footer-interaction h3 {
+        font-size: 1.3rem;
+    }
+
+    .like-button {
+        padding: 0.8rem;
     }
 }
 

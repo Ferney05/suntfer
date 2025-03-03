@@ -16,9 +16,18 @@
                     <h2>suntfer.dev</h2>
                 </div>
     
-                <div class="red-social">
-                    <a href="https://www.instagram.com/suntfer.5/"><img src="svg/ig.svg" alt="instagram"></a>
-                    <a href="https://www.linkedin.com/in/suntfer/"><img src="svg/in.svg" alt="linkedin"></a>
+                <div class="nav-right">
+                    <button class="like-button" onclick="handleLike()">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                        </svg>
+                        <span id="likeCount">0</span>
+                    </button>
+
+                    <div class="red-social">
+                        <a href="https://www.instagram.com/suntfer.5/"><img src="svg/ig.svg" alt="instagram"></a>
+                        <a href="https://www.linkedin.com/in/suntfer/"><img src="svg/in.svg" alt="linkedin"></a>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -259,112 +268,160 @@
             <div class="skills-content">
                 <h2>Habilidades Técnicas</h2>
                 
-                <div class="skills-category">
-                    <h3>Programación</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>HTML</span>
-                                <span class="percentage">90%</span>
+                <div class="skills-slider">
+                    <div class="skills-category">
+                        <h3>Programación</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>HTML</span>
+                                    <span class="percentage">90%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 90%"></div>
+                                </div>
                             </div>
-                            <div class="progress-bar">
-                                <div class="progress" style="width: 90%"></div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>CSS</span>
+                                    <span class="percentage">85%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>JavaScript</span>
+                                    <span class="percentage">80%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>Python</span>
+                                    <span class="percentage">75%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>PHP</span>
+                                    <span class="percentage">70%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 70%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>C++</span>
+                                    <span class="percentage">40%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 40%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>C#</span>
+                                    <span class="percentage">40%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 40%"></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>CSS</span>
-                                <span class="percentage">85%</span>
+                    </div>
+
+                    <div class="skills-category">
+                        <h3>Frameworks y Librerías</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>React</span>
+                                    <span class="percentage">45%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 45%"></div>
+                                </div>
                             </div>
-                            <div class="progress-bar">
-                                <div class="progress" style="width: 85%"></div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>Django</span>
+                                    <span class="percentage">40%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 40%"></div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>JavaScript</span>
-                                <span class="percentage">80%</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress" style="width: 80%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>Python</span>
-                                <span class="percentage">75%</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress" style="width: 75%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>PHP</span>
-                                <span class="percentage">70%</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress" style="width: 70%"></div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>Firebase</span>
+                                    <span class="percentage">85%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 85%"></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>C++</span>
-                                <span class="percentage">40%</span>
+                    </div>
+
+                    <div class="skills-category">
+                        <h3>Bases de Datos</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>MySQL</span>
+                                    <span class="percentage">90%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 90%"></div>
+                                </div>
                             </div>
-                            <div class="progress-bar">
-                                <div class="progress" style="width: 40%"></div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>PHPMyAdmin</span>
+                                    <span class="percentage">95%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 95%"></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>C#</span>
-                                <span class="percentage">40%</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress" style="width: 40%"></div>
+                    </div>
+
+                    <div class="skills-category">
+                        <h3>Entorno de Ejecución</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>Node.js</span>
+                                    <span class="percentage">45%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 45%"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="skills-category">
-                    <h3>Frameworks y Librerías</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>React</span>
-                                <span class="percentage">45%</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress" style="width: 45%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>Django</span>
-                                <span class="percentage">40%</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress" style="width: 40%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skills-category">
-                    <h3>Entorno de Ejecución</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>Node.js</span>
-                                <span class="percentage">45%</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress" style="width: 45%"></div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="slider-controls">
+                    <button class="slider-button prev">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                        </svg>
+                    </button>
+                    <button class="slider-button next">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>
@@ -384,6 +441,29 @@
                         <div class="spinner" style="display: none;"></div>
                     </button>
                 </form>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-content">
+                <div class="footer-nav">
+                    <div class="icon-name">
+                        <img src="svg/icono.svg" alt="icono">
+                        <h2>suntfer.dev</h2>
+                    </div>
+                    <div class="red-social">
+                        <a href="https://www.instagram.com/suntfer.5/"><img src="svg/ig.svg" alt="instagram"></a>
+                        <a href="https://www.linkedin.com/in/suntfer/"><img src="svg/in.svg" alt="linkedin"></a>
+                    </div>
+                </div>
+                <div class="footer-interaction">
+                    <h3>¡Mantente conectado!</h3>
+                    <p>Suscríbete para recibir actualizaciones sobre nuevos proyectos y contenido interesante.</p>
+                    <form class="subscribe-form" onsubmit="return handleSubscribe(event)">
+                        <input type="email" placeholder="Tu correo electrónico" required>
+                        <button type="submit">Suscribirse</button>
+                    </form>
+                </div>
             </div>
         </div>
     </main>
@@ -454,6 +534,42 @@
             // Inicializar el carrusel
             updateCarousel(currentIndex);
         });
+
+        // Funciones para el footer
+        function handleSubscribe(e) {
+            e.preventDefault();
+            const email = e.target.querySelector('input[type="email"]').value;
+            Toastify({
+                text: "¡Gracias por suscribirte!",
+                duration: 3000,
+                gravity: "top",
+                position: "center",
+                style: {
+                    background: "#25d366",
+                    borderRadius: "10px",
+                    padding: "15px 25px"
+                }
+            }).showToast();
+            e.target.reset();
+            return false;
+        }
+
+        let likes = 0;
+        function handleLike() {
+            likes++;
+            document.getElementById('likeCount').textContent = likes;
+            Toastify({
+                text: "¡Gracias por tu apoyo! ❤️",
+                duration: 2000,
+                gravity: "top",
+                position: "center",
+                style: {
+                    background: "#ff5f6d",
+                    borderRadius: "10px",
+                    padding: "15px 25px"
+                }
+            }).showToast();
+        }
     </script>
 
     <!-- EmailJS -->
@@ -462,73 +578,115 @@
     <!-- Toastify -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
     
     <script>
-        // Inicializar EmailJS con tu Public Key
-        (function() {
-            emailjs.init("aAsGY0Y9ckJ-4vjbH");
-        })();
+        // Configuración de Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyDxnB_p5hDugD03Z01hGSvozZZtlaw7OG8",
+            authDomain: "suntfer-2d972.firebaseapp.com",
+            projectId: "suntfer-2d972",
+            storageBucket: "suntfer-2d972.firebasestorage.app",
+            messagingSenderId: "346241318321",
+            appId: "1:346241318321:web:86c1fe77d267d6f8f15190",
+            measurementId: "G-8QBPNSRYKD"
+        };
 
-        function sendEmail(e) {
+        // Inicializar Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        // Función para manejar likes
+        async function handleLike() {
+            try {
+                const likesRef = db.collection('stats').doc('likes');
+                await db.runTransaction(async (transaction) => {
+                    const doc = await transaction.get(likesRef);
+                    if (!doc.exists) {
+                        transaction.set(likesRef, { count: 1 });
+                    } else {
+                        transaction.update(likesRef, { count: doc.data().count + 1 });
+                    }
+                });
+                
+                // Actualizar el contador en la UI
+                const doc = await likesRef.get();
+                document.getElementById('likeCount').textContent = doc.data().count;
+                
+                Toastify({
+                    text: "¡Gracias por tu apoyo! ❤️",
+                    duration: 2000,
+                    gravity: "top",
+                    position: "center",
+                    style: {
+                        background: "linear-gradient(to right, #ff5f6d, #ffc371)",
+                        borderRadius: "10px",
+                        padding: "15px 25px"
+                    }
+                }).showToast();
+            } catch (error) {
+                console.error("Error al actualizar likes:", error);
+            }
+        }
+
+        // Función para manejar suscripciones
+        async function handleSubscribe(e) {
             e.preventDefault();
-
-            // Obtener el botón y mostrar spinner
-            const submitBtn = document.getElementById('submitBtn');
-            const btnText = submitBtn.querySelector('span');
-            const spinner = submitBtn.querySelector('.spinner');
+            const email = e.target.querySelector('input[type="email"]').value;
             
-            btnText.style.opacity = '0';
-            spinner.style.display = 'block';
-            submitBtn.disabled = true;
-
-            // Obtener los valores del formulario
-            const templateParams = {
-                from_name: document.getElementById('nombre').value,
-                phone: document.getElementById('telefono').value,
-                reply_to: document.getElementById('email').value,
-                subject: document.getElementById('asunto').value,
-                message: document.getElementById('mensaje').value
-            };
-
-            // Enviar el email usando EmailJS
-            emailjs.send('service_c1y3bua', 'template_tqigoqq', templateParams)
-                .then(function(response) {
-                    console.log('SUCCESS!', response.status, response.text);
-                    Toastify({
-                        text: "¡Mensaje enviado correctamente!",
-                        duration: 3000,
-                        gravity: "top",
-                        position: "center",
-                        style: {
-                            background: "#25d366",
-                            borderRadius: "10px",
-                            padding: "15px 25px"
-                        }
-                    }).showToast();
-                    document.getElementById('contactForm').reset();
-                }, function(error) {
-                    console.log('FAILED...', error);
-                    Toastify({
-                        text: "Error al enviar el mensaje. Por favor, intenta nuevamente",
-                        duration: 3000,
-                        gravity: "top",
-                        position: "center",
-                        style: {
-                            background: "linear-gradient(to right, #ff5f6d, #ffc371)",
-                            borderRadius: "10px",
-                            padding: "15px 25px"
-                        }
-                    }).showToast();
-                })
-                .finally(function() {
-                    // Restaurar el botón
-                    btnText.style.opacity = '1';
-                    spinner.style.display = 'none';
-                    submitBtn.disabled = false;
+            try {
+                // Guardar el email en Firestore
+                await db.collection('subscribers').add({
+                    email: email,
+                    timestamp: firebase.firestore.FieldValue.serverTimestamp()
                 });
 
+                Toastify({
+                    text: "¡Gracias por suscribirte!",
+                    duration: 3000,
+                    gravity: "top",
+                    position: "center",
+                    style: {
+                        background: "#25d366",
+                        borderRadius: "10px",
+                        padding: "15px 25px"
+                    }
+                }).showToast();
+                e.target.reset();
+            } catch (error) {
+                console.error("Error al guardar suscripción:", error);
+                Toastify({
+                    text: "Hubo un error al procesar tu suscripción. Por favor, intenta nuevamente.",
+                    duration: 3000,
+                    gravity: "top",
+                    position: "center",
+                    style: {
+                        background: "linear-gradient(to right, #ff5f6d, #ffc371)",
+                        borderRadius: "10px",
+                        padding: "15px 25px"
+                    }
+                }).showToast();
+            }
             return false;
         }
+
+        // Cargar el contador de likes al iniciar
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const likesRef = db.collection('stats').doc('likes');
+                const doc = await likesRef.get();
+                if (doc.exists) {
+                    document.getElementById('likeCount').textContent = doc.data().count;
+                }
+            } catch (error) {
+                console.error("Error al cargar likes:", error);
+            }
+        });
     </script>
+
+    <script src="js/skills-slider.js"></script>
 </body>
 </html>
