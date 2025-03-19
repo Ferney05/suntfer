@@ -11,6 +11,63 @@ document.addEventListener('DOMContentLoaded', () => {
     let autoPlayInterval;
     const totalProjects = projects.length;
 
+    // Función para cargar likes iniciales
+    async function loadProjectLikes(projectId, likeCountElement) {
+        try {
+            const likesRef = db.collection(projectId).doc('likes');
+            const doc = await likesRef.get();
+            if (doc.exists) {
+                likeCountElement.textContent = doc.data().count;
+            } else {
+                likeCountElement.textContent = '0';
+            }
+        } catch (error) {
+            console.error("Error al cargar likes:", error);
+            likeCountElement.textContent = '0';
+        }
+    }
+
+    // Cargar likes iniciales para cada proyecto
+    const projectLikeButtons = document.querySelectorAll('.project-like-btn');
+    projectLikeButtons.forEach(button => {
+        const projectId = button.dataset.project;
+        const likeCount = button.querySelector('.like-count');
+        loadProjectLikes(projectId, likeCount);
+
+        // Agregar event listener para el botón
+        button.addEventListener('click', async () => {
+            try {
+                const likesRef = db.collection(projectId).doc('likes');
+                await db.runTransaction(async (transaction) => {
+                    const doc = await transaction.get(likesRef);
+                    if (!doc.exists) {
+                        transaction.set(likesRef, { count: 1 });
+                    } else {
+                        transaction.update(likesRef, { count: doc.data().count + 1 });
+                    }
+                });
+                
+                const doc = await likesRef.get();
+                likeCount.textContent = doc.data().count;
+                button.classList.add('liked');
+                
+                Toastify({
+                    text: `¡${projectId === 'sheifood' ? 'SheiFood' : 'CashBridge'} me encanta! ❤️`,
+                    duration: 2000,
+                    gravity: "top",
+                    position: "center",
+                    style: {
+                        background: "linear-gradient(to right, #1ea3e5, #4161e5)",
+                        borderRadius: "10px",
+                        padding: "15px 25px"
+                    }
+                }).showToast();
+            } catch (error) {
+                console.error("Error al actualizar likes:", error);
+            }
+        });
+    });
+
     function updateCarousel() {
         if (isTransitioning) return;
         
@@ -103,56 +160,4 @@ document.addEventListener('DOMContentLoaded', () => {
             this.textContent = description.classList.contains('expanded') ? 'Ver menos' : 'Ver más';
         });
     });
-
-    // Botones de like en proyectos
-    const projectLikeButtons = document.querySelectorAll('.project-like-btn');
-    projectLikeButtons.forEach(button => {
-        button.addEventListener('click', async function() {
-            const projectId = this.dataset.project;
-            try {
-                const likesRef = db.collection('projectLikes').doc(projectId);
-                await db.runTransaction(async (transaction) => {
-                    const doc = await transaction.get(likesRef);
-                    if (!doc.exists) {
-                        transaction.set(likesRef, { count: 1 });
-                    } else {
-                        transaction.update(likesRef, { count: doc.data().count + 1 });
-                    }
-                });
-                
-                const doc = await likesRef.get();
-                this.querySelector('.like-count').textContent = doc.data().count;
-                this.classList.add('liked');
-                
-                Toastify({
-                    text: "¡Gracias por tu apoyo!",
-                    duration: 2000,
-                    gravity: "top",
-                    position: "center",
-                    style: {
-                        background: "linear-gradient(to right, #3772e4, #2496e4)",
-                        borderRadius: "10px",
-                        padding: "15px 25px"
-                    }
-                }).showToast();
-            } catch (error) {
-                console.error("Error al actualizar likes:", error);
-            }
-        });
-    });
 });
-
-// Función para cargar los likes de un proyecto
-async function loadProjectLikes(projectId, likeCountElement) {
-    try {
-        const doc = await db.collection('projects').doc(projectId).get();
-        if (doc.exists) {
-            likeCountElement.textContent = doc.data().likes || 0;
-        } else {
-            likeCountElement.textContent = '0';
-        }
-    } catch (error) {
-        console.error("Error al cargar likes:", error);
-        likeCountElement.textContent = '0';
-    }
-} 

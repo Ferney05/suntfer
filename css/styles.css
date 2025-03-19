@@ -1689,6 +1689,12 @@ body {
     margin-bottom: 1rem;
 }
 
+@media (max-width: 600px) {
+    .project-description {
+        max-height: 200px;
+    }
+}
+
 .project-description.expanded {
     max-height: none;
 }
