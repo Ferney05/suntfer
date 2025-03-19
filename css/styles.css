@@ -127,6 +127,11 @@ body {
         width: 16px;
         height: 16px;
     }
+
+    .trayectoria {
+        margin-top: -1rem !important;
+    }      
+    
 }
 
 
