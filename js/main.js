@@ -52,7 +52,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 button.classList.add('liked');
                 
                 Toastify({
-                    text: `¡${projectId === 'sheifood' ? 'SheiFood' : 'CashBridge'} me encanta! ❤️`,
+                    text: `¡${
+                        projectId === 'sheifood' ? 'SheiFood' : 
+                        projectId === 'cashbridge' ? 'CashBridge' : 
+                        'Kredix'
+                    } me encanta! ❤️`,
                     duration: 2000,
                     gravity: "top",
                     position: "center",
